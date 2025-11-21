@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   description: "Instant access to all Ivey breakout and classroom schedules.",
 };
 
+// UPDATED VIEWPORT COLOR (Emerald 600)
+export const viewport = {
+  themeColor: '#059669',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

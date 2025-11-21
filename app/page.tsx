@@ -71,9 +71,14 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto px-4 md:px-6 -mt-16 relative z-20">
 
-        {/* FILTER BAR - FIXED TOUCH EFFECTS */}
-        <div className="flex justify-start md:justify-center overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 mb-8 md:mb-12 no-scrollbar">
-          <div className="flex gap-2 bg-white p-2 rounded-full shadow-lg border border-slate-100 flex-nowrap min-w-max mx-auto">
+        {/* FILTER BAR - RESPONSIVE DESIGN */}
+        {/* Mobile: Full-width strip. Desktop: Centered floating pill. */}
+        <div className="sticky top-0 z-30 -mx-4 md:mx-0 mb-8 md:mb-12">
+          <div className="
+            flex gap-2 overflow-x-auto no-scrollbar 
+            bg-white border-y border-slate-100 shadow-sm py-3 px-4 /* Mobile Styles: Full width strip */
+            md:bg-white md:border md:border-slate-100 md:shadow-lg md:rounded-full md:p-2 md:w-max md:mx-auto /* Desktop Styles: Floating Pill */
+          ">
             {filters.map((filter) => (
               <button
                 key={filter.id}
@@ -83,7 +88,7 @@ export default function Home() {
                   active:scale-95
                   ${selectedFloor === filter.id
                     ? "bg-emerald-600 text-white shadow-md"
-                    : "bg-white text-slate-500 border border-slate-100 hover:bg-emerald-50 active:bg-emerald-100 active:text-emerald-700 active:border-emerald-200"}
+                    : "bg-slate-50 md:bg-white text-slate-500 border border-slate-200 md:border-transparent active:bg-emerald-100 active:text-emerald-700 active:border-emerald-200"}
                 `}
               >
                 {filter.label}
