@@ -36,13 +36,13 @@ export default function Home() {
 
           {/* LOGO AREA */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
-            {/* Icon: Smaller on mobile (w-12), bigger on desktop (md:w-16) */}
-            <div className="relative flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white rounded-2xl shadow-xl transform -rotate-6 border-2 border-emerald-50">
-              <BookOpen className="text-emerald-600 relative z-10 w-6 h-6 md:w-9 md:h-9" strokeWidth={2} />
+            {/* Icon Container: w-16 h-16 (Mobile) -> w-20 h-20 (Desktop) */}
+            <div className="relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-xl transform -rotate-6 border-2 border-emerald-50">
+              <BookOpen className="text-emerald-600 relative z-10 w-8 h-8 md:w-10 md:h-10" strokeWidth={2} />
             </div>
 
-            {/* Title: Smaller on mobile (text-3xl), bigger on desktop (md:text-5xl) */}
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white" style={{ fontFamily: 'var(--font-outfit)' }}>
+            {/* Title: text-4xl (Mobile) -> text-6xl (Desktop) */}
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white" style={{ fontFamily: 'var(--font-outfit)' }}>
               BreakoutBuddy
             </h1>
           </div>
@@ -71,20 +71,19 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto px-4 md:px-6 -mt-16 relative z-20">
 
-        {/* FILTER BAR (RESPONSIVE) */}
-        {/* Mobile: Horizontal Scroll. Desktop: Centered Pill. */}
+        {/* FILTER BAR - FIXED TOUCH EFFECTS */}
         <div className="flex justify-start md:justify-center overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 mb-8 md:mb-12 no-scrollbar">
-          <div className="flex gap-2 md:bg-white md:p-2 md:rounded-full md:shadow-lg md:border md:border-slate-100 flex-nowrap">
+          <div className="flex gap-2 bg-white p-2 rounded-full shadow-lg border border-slate-100 flex-nowrap min-w-max mx-auto">
             {filters.map((filter) => (
               <button
                 key={filter.id}
                 onClick={() => setSelectedFloor(filter.id)}
                 className={`
-                  px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 whitespace-nowrap
-                  active:scale-95 /* Adds a "press" effect on touch */
+                  px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap transition-transform duration-100
+                  active:scale-95
                   ${selectedFloor === filter.id
                     ? "bg-emerald-600 text-white shadow-md"
-                    : "bg-white md:bg-transparent text-slate-500 hover:text-emerald-700 hover:bg-emerald-50 border border-slate-100 md:border-none shadow-sm md:shadow-none"}
+                    : "bg-white text-slate-500 border border-slate-100 hover:bg-emerald-50 active:bg-emerald-100 active:text-emerald-700 active:border-emerald-200"}
                 `}
               >
                 {filter.label}
@@ -111,21 +110,25 @@ export default function Home() {
         )}
       </div>
       <AddToHome />
-      {/* Footer */}
-      <footer className="mt-20 text-center text-slate-400 pb-8">
-        <p className="flex items-center justify-center gap-2 text-sm font-medium">
-          Not affiliated with the Ivey Business School. Created by Pablo Gonzalez
-          <span className="w-1 h-1 rounded-full bg-slate-300" />
+      {/* Footer - Optimized for Mobile */}
+      <footer className="mt-20 text-center text-slate-400 pb-10 px-6">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-2 text-sm font-medium">
+          <span>Not affiliated with the Ivey Business School. Created by Pablo Gonzalez</span>
+
+          {/* The dot separator: Hidden on mobile (hidden), visible on desktop (md:block) */}
+          <span className="hidden md:block w-1 h-1 rounded-full bg-slate-300" />
+
           <a
             href="https://www.linkedin.com/in/pablogonzalez-/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-emerald-600 transition-colors flex items-center gap-1.5"
+            className="hover:text-emerald-600 transition-colors flex items-center gap-1.5 bg-white md:bg-transparent px-4 py-2 md:p-0 rounded-full md:rounded-none shadow-sm md:shadow-none text-slate-600 md:text-slate-400"
           >
+            {/* Note: Make sure Linkedin is imported from lucide-react at the top! */}
             <LinkedinIcon size={14} />
             Connect on LinkedIn
           </a>
-        </p>
+        </div>
       </footer>
     </main>
   );

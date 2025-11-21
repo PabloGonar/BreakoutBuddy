@@ -14,8 +14,13 @@ export default function RoomCard({ room }: { room: Room }) {
             className="
         group relative flex flex-col justify-between p-6 rounded-2xl bg-white 
         border border-slate-200 
-        transition-all duration-300 ease-out
+        transition-all duration-150 ease-out
+        
+        /* DESKTOP HOVER STATES */
         hover:shadow-xl hover:-translate-y-1 hover:border-emerald-300 hover:ring-1 hover:ring-emerald-300
+        
+        /* MOBILE TOUCH STATES (The Fix) */
+        active:scale-[0.98] active:bg-emerald-50 active:border-emerald-500
       "
         >
             <div className="flex justify-between items-start mb-2">
