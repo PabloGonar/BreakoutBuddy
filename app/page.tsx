@@ -118,7 +118,7 @@ export default function Home() {
       {/* Footer - Optimized for Mobile */}
       <footer className="mt-20 text-center text-slate-400 pb-10 px-6">
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-2 text-sm font-medium">
-          <span>Not affiliated with the Ivey Business School. Created by Pablo Gonzalez</span>
+          <span>Not directly affiliated with Ivey. Created by Pablo Gonzalez</span>
 
           {/* The dot separator: Hidden on mobile (hidden), visible on desktop (md:block) */}
           <span className="hidden md:block w-1 h-1 rounded-full bg-slate-300" />

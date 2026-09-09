@@ -34,13 +34,13 @@ export default function RoomCard({ room }: { room: Room }) {
                 <ExternalLink size={18} className="text-slate-300 group-hover:text-emerald-500 transition-colors" />
             </div>
 
-            <div className="mt-2">
-                <h3 className="text-3xl font-extrabold text-slate-800 tracking-tight group-hover:text-emerald-900 transition-colors">
-                    {room.name.replace("Room ", "")} <span className="text-lg text-slate-400 font-normal">Room</span>
+            <div className="mt-2 text-center">
+                <h3 className="text-5xl font-extrabold text-slate-800 tracking-tight group-hover:text-emerald-900 transition-colors">
+                    {room.name.replace("Room ", "")}
                 </h3>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
+            <div className="mt-2 pt-4 border-t border-slate-50 flex justify-between items-center">
                 <span className="text-sm text-slate-400 font-medium group-hover:text-emerald-600 transition-colors">
                     View Schedule
                 </span>
