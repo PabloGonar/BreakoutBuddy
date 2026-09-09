@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, MapPin, BookOpen } from "lucide-react";
+import { Search, BookOpen } from "lucide-react";
 import { ROOMS } from "@/app/data/rooms";
 import RoomCard from "@/components/RoomCard";
 import AddToHome from "@/components/AddToHome";
@@ -48,7 +48,7 @@ export default function Home() {
           </div>
 
           <p className="text-emerald-100 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
-            Instant access to all Ivey breakout and classroom schedules. <br className="hidden md:block" /> Don't waste precious study time moving around.
+            Instant access to all Ivey breakout and classroom schedules. <br className="hidden md:block" /> Don&apos;t waste precious study time moving around.
           </p>
 
           {/* SEARCH BAR */}

@@ -14,7 +14,9 @@ export default function AddToHome() {
         const ios = /iphone|ipad|ipod/.test(userAgent);
         const android = /android/.test(userAgent);
 
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsIOS(ios);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsAndroid(android);
 
         // 2. Show after 3 seconds
@@ -49,11 +51,11 @@ export default function AddToHome() {
                             <span className="font-semibold text-emerald-700">Tip:</span>
 
                             {isIOS && (
-                                <span>Tap <Share size={12} className="inline mx-1" /> then "Add to Home Screen"</span>
+                                <span>Tap <Share size={12} className="inline mx-1" /> then &quot;Add to Home Screen&quot;</span>
                             )}
 
                             {isAndroid && (
-                                <span>Tap <MoreVertical size={12} className="inline mx-1" /> then "Add to Home Screen"</span>
+                                <span>Tap <MoreVertical size={12} className="inline mx-1" /> then &quot;Add to Home Screen&quot;</span>
                             )}
 
                             {!isIOS && !isAndroid && (
