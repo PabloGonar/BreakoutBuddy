@@ -29,6 +29,13 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 font-sans text-slate-900 pb-20">
 
+      {/* TRAFFIC WARNING BANNER */}
+        <div className="w-full bg-[#fff8b0] py-3 px-4 text-center border-b border-yellow-200">
+            <p className="text-[#ffb100] text-sm md:text-base font-semibold">
+                Currently, access to some schedules may be limited due to high traffic. We are working on a solution.
+            </p>
+        </div>
+
       {/* HEADER SECTION */}
       <header className="bg-gradient-to-br from-emerald-600 to-emerald-600 text-white pt-12 pb-24 px-6 relative shadow-xl">
 
